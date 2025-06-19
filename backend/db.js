@@ -1,6 +1,9 @@
 const mongoose = require("mongoose")
+const dotenv = require("dotenv")
 
-const mongoURI = "mongodb://localhost:27017/notesapp"
+dotenv.config()
+
+const mongoURI = process.env.DB_URI
 
 const connectToMongo = () => {
     mongoose.connect(mongoURI)
