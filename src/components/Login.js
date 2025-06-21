@@ -7,12 +7,14 @@ const Login = (props) => {
     password: ""
   })
 
+  const host = process.env.REACT_APP_BACKEND
+
   const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     const { email, password } = credentials
-    const response = await fetch("https://notes-app-backend-zixf.onrender.com/api/auth/login", {
+    const response = await fetch(`${host}/api/auth/login`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -20,7 +22,6 @@ const Login = (props) => {
         body: JSON.stringify({ email, password })
     })
     const json = await response.json()
-    console.log(json)
     if (json.success) {
         // Save the auth token and redirect
         localStorage.setItem('token', json.authtoken)
