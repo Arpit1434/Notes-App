@@ -1,4 +1,4 @@
-# [Notes App](https://notes-app-arpit.vercel.app/) ![](public/logo192.png)
+# [Notes App](https://notes-app-arpit.vercel.app/) ![](public/favicon.ico)
 You can create your notes and save it to your account. You can create, update, and delete your notes.
 
 This application was made in __React__ as frontend and deployed on __Vercel__. The backend uses __Express__ and is deployed on __Digital Ocean__. For the database, I have used MongoDB and deployed it on __MongoDB Atlas__.
