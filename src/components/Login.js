@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 const Login = (props) => {
@@ -10,6 +10,13 @@ const Login = (props) => {
   const host = process.env.REACT_APP_BACKEND
 
   const navigate = useNavigate()
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+        navigate("/")
+    }
+    // eslint-disable-next-line
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault()

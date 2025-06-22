@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 const Signup = (props) => {
@@ -9,9 +9,16 @@ const Signup = (props) => {
     confirmpassword: ""
    })
 
+   const host = process.env.REACT_APP_BACKEND
+   
    const navigate = useNavigate()
 
-   const host = process.env.REACT_APP_BACKEND
+   useEffect(() => {
+    if (localStorage.getItem("token")) {
+        navigate("/")
+    }
+    // eslint-disable-next-line
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
