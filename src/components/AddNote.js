@@ -27,7 +27,8 @@ const AddNote = (props) => {
   }
 
   return (
-    <div className="container my-3">
+    <div className="container p-3" style={{ width: "45%", minWidth: "90%" }}>
+      <div className='px-4 py-2 flex border border-2 rounded shadow-sm'>
         <h2>Add Note</h2>
         <form className='my-3'>
           <div className="mb-3">
@@ -36,7 +37,7 @@ const AddNote = (props) => {
           </div>
           <div className="mb-3">
             <label htmlFor="description" className="form-label">Description</label>
-            <input type="text" className="form-control" id="description" name="description" value={note.description} onChange={onChange}/>
+            <input type="text" className="form-control" id="description" name="description" onChange={onChange}/>
           </div>
           <div className="mb-3">
             <label htmlFor="tag" className="form-label">Tag</label>
@@ -44,6 +45,7 @@ const AddNote = (props) => {
           </div>
           <button disabled={note.title.length < 3 || note.description.length < 5} type="submit" className="btn btn-primary" onClick={handleClick}>Add Note</button>
         </form>
+      </div>
     </div>
   )
 }

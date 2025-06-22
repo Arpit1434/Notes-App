@@ -11,7 +11,7 @@ const Navbar = () => {
   }
 
   return (
-    <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
+    <nav className="navbar navbar-expand-lg bg-dark navbar-dark" style={{minHeight: "8.5%"}}>
         <div className="container-fluid">
             <Link className="navbar-brand" to="/">Notes App</Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,9 +22,6 @@ const Navbar = () => {
                 {localStorage.getItem("token") && <li className="nav-item">
                 <Link className={`nav-link ${location.pathname==="/"? "active": ""}`} aria-current="page" to="/">Home</Link>
                 </li>}
-                <li className="nav-item">
-                <Link className={`nav-link ${location.pathname==="/about"? "active": ""}`} to="/about">About</Link>
-                </li>
             </ul>
             {localStorage.getItem("token")? <button onClick={handleLogout} type='button' className="btn btn-danger">Logout</button>: <form className="d-flex">
                 <Link className="btn btn-primary mx-1" to="/login" role="button">Login</Link>

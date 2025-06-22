@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Signup = (props) => {
   const [credentials, setCredentials] = useState({
@@ -39,27 +39,30 @@ const Signup = (props) => {
   }
 
   return (
-    <div className='mt-3 container'>
-        <h2 className="my-3">Create an account to use Notes App</h2>
-        <form onSubmit={handleSubmit}>
-            <div className="my-3">
-                <label htmlFor="name" className="form-label">Name</label>
-                <input type="text" className="form-control" id="name" name="name" onChange={handleChange}/>
-            </div>
-            <div className="mb-3">
-                <label htmlFor="email" className="form-label">Email address</label>
-                <input type="email" className="form-control" id="email" aria-describedby="emailHelp" name="email" onChange={handleChange}/>
-            </div>
-            <div className="mb-3">
-                <label htmlFor="password" className="form-label">Password</label>
-                <input type="password" className="form-control" id="password" name="password" onChange={handleChange} minLength={5} required/>
-            </div>
-            <div className="mb-3">
-                <label htmlFor="confirmpassword" className="form-label">Confirm Password</label>
-                <input type="password" className="form-control" id="confirmpassword" name="confirmpassword" onChange={handleChange} minLength={5} required/>
-            </div>
-            <button type="submit" className="btn btn-primary">Submit</button>
-        </form>
+    <div className='pt-3 container d-grid' style={{ height: "100%", placeContent: "center" }}>
+        <div className='p-4 border border-2 rounded shadow-sm' style={{ minWidth: "25vw" }}>
+            <h2 className="mb-3">Signup</h2>
+            <form onSubmit={handleSubmit}>
+                <div className="my-3">
+                    <label htmlFor="name" className="form-label">Name</label>
+                    <input type="text" className="form-control" id="name" name="name" onChange={handleChange}/>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="email" className="form-label">Email address</label>
+                    <input type="email" className="form-control" id="email" aria-describedby="emailHelp" name="email" onChange={handleChange}/>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="password" className="form-label">Password</label>
+                    <input type="password" className="form-control" id="password" name="password" onChange={handleChange} minLength={5} required/>
+                </div>
+                <div className="mb-3">
+                    <label htmlFor="confirmpassword" className="form-label">Confirm Password</label>
+                    <input type="password" className="form-control" id="confirmpassword" name="confirmpassword" onChange={handleChange} minLength={5} required/>
+                </div>
+                <button type="submit" className="btn btn-primary">Submit</button>
+            </form>
+            <div className='pt-2'><Link className='text-decoration-none' to="/login">Already have an account?</Link></div>
+        </div>
     </div>
   )
 }

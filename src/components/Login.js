@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 const Login = (props) => {
   const [credentials, setCredentials] = useState({
@@ -37,19 +37,22 @@ const Login = (props) => {
   }
 
   return (
-    <div className='mt-3 container'>
-      <h2 className="my-3">Login to continue to Notes App</h2>
-      <form onSubmit={handleSubmit}>
-          <div className="my-3">
-              <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
-              <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" onChange={handleChange}/>
-          </div>
-          <div className="mb-3">
-              <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-              <input type="password" className="form-control" id="exampleInputPassword1" name="password" onChange={handleChange}/>
-          </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
-      </form>
+    <div className='pt-3 container d-grid' style={{ height: "100%", placeContent: "center" }}>
+      <div className='p-4 border border-2 rounded shadow-sm' style={{ minWidth: "20vw" }}>
+        <h2 className="mb-3">Login</h2>
+        <form onSubmit={handleSubmit}>
+            <div className="my-3">
+                <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
+                <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email" onChange={handleChange}/>
+            </div>
+            <div className="mb-3">
+                <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
+                <input type="password" className="form-control" id="exampleInputPassword1" name="password" onChange={handleChange}/>
+            </div>
+            <button type="submit" className="btn btn-primary">Submit</button>
+        </form>
+        <div className='pt-2'><Link className='text-decoration-none' to="/signup">Don't have an account?</Link></div>
+      </div>
     </div>
   )
 }

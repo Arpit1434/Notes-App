@@ -62,7 +62,7 @@ const Notes = (props) => {
                     <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div className="modal-body">
-                    <form className='my-3'>
+                    <form className='mb-3'>
                         <div className="mb-3">
                             <label htmlFor="editedtitle" className="form-label">Title</label>
                             <input type="text" className="form-control" id="editedtitle" name="editedtitle" value={note.editedtitle} aria-describedby="emailHelp" onChange={onChange}/>
