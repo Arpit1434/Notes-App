@@ -6,7 +6,7 @@ dotenv.config()
 const mongoURI = process.env.DB_URI
 
 const connectToMongo = () => {
-    mongoose.connect(mongoURI)
+    mongoose.connect(mongoURI, {dbName: "notesapp"})
     .then(() => {
         console.log("Connected to Mongo Successfully")
     })
