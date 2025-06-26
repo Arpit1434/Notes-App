@@ -9,11 +9,11 @@ const app = express()
 const port = process.env.PORT
 
 app.use(cors({
-  'allowedHeaders': ['auth-token', 'Content-Type'],
-  'origin': '*',
-  'methods': 'GET,PUT,POST,DELETE',
-  'preflightContinue': false
-}));
+  origin: 'https://notes-app-arpit.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'auth-token'],
+  credentials: true
+}))
 app.use(express.json())
 
 // Available routes
