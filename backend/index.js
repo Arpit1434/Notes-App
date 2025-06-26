@@ -8,7 +8,9 @@ connectToMongo()
 const app = express()
 const port = process.env.PORT
 
-app.use(cors())
+app.use(cors({
+    origin: "https://notes-app-arpit.vercel.app"
+}))
 app.use(express.json())
 
 // Available routes
