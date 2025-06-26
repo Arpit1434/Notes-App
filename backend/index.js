@@ -14,6 +14,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'auth-token'],
   credentials: true
 }))
+app.options('*', cors());
 app.use(express.json())
 
 // Available routes
