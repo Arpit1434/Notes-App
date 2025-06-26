@@ -10,7 +10,7 @@ const port = process.env.PORT
 
 app.use(cors({
   origin: 'https://notes-app-arpit.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'auth-token'],
   credentials: true
 }))
